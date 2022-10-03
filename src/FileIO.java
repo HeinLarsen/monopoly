@@ -36,7 +36,6 @@ public class FileIO {
 //            Scanner input = new Scanner(new File("players.txt"));
 //            while (input.hasNextLine()) {
 //                String s = input.nextLine();
-//                String[] data = s.split(",");
 //                Player p = new Player(data[0], Integer.parseInt(data[1]));
 //                players.add(p);
 //            }
@@ -48,6 +47,19 @@ public class FileIO {
 
 
     public ArrayList<String> readGameData() {
-        return null;
+        ArrayList<String> values = new ArrayList<>();
+        try {
+            Scanner input = new Scanner(new File("gamedata.txt"));
+            while (input.hasNextLine()) {
+                String s = input.nextLine();
+                values.add(s);
+            }
+        } catch (FileNotFoundException f) {
+            System.out.println(f);
+        }
+        return values;
+
     }
+
+
 }

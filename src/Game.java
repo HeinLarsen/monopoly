@@ -3,6 +3,9 @@ import java.util.ArrayList;
 public class Game {
     FileIO fileIO = new FileIO();
     TextUI textUI = new TextUI();
+    private int startValue = 30000;
+    private ArrayList<Player> players = new ArrayList<>();
+
 
     public void gameSetup() {
         /*
@@ -19,9 +22,27 @@ public class Game {
     }
 
     public void createPlayers(ArrayList<String> data) {
-        for (String p: data) {
+
+        for (String s: data) {
+            String[] values = s.split(",");
+
+            int amount;
+
+            if (values.length > 1) {
+                amount = Integer.parseInt(values[1]);
+            } else {
+                amount = startValue;
+            }
+
+            Player p = new Player(values[0], amount);
+            players.add(p);
+
+        }
+    }
+
+    public  void showPlayers() {
+        for (Player p: players) {
             System.out.println(p);
-//            Player p = new Player(p, 20000);
         }
     }
 }
