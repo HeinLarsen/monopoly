@@ -34,6 +34,8 @@ public class Game {
 
         }
 
+        players.get(0).buy(200);
+
     }
 
     public void displayPlayers() {

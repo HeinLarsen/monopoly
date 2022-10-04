@@ -20,9 +20,15 @@ public class Player {
         return account.getBalance();
     }
 
+    public void buy(int price) {
+        this.account.doTransaction(-price);
+    }
 
     @Override
     public String toString() {
         return name + ": " + account;
     }
+
+
+
 }
