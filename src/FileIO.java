@@ -9,7 +9,7 @@ public class FileIO {
 
 
     public ArrayList<String> readGameData() {
-        File file = new File("Data/gamedata.txt");
+        File file = new File("Data/gamedata.csv");
         ArrayList<String> data = new ArrayList<>();
         try {
             Scanner input = new Scanner(file);
@@ -27,7 +27,7 @@ public class FileIO {
 
     public static void writeGameData(ArrayList<Player> players) {
         try {
-            FileWriter writer = new FileWriter("Data/gamedata.txt");
+            FileWriter writer = new FileWriter("Data/gamedata.csv");
             for (Player p : players) {
                 writer.write(p.getName() + "," + p.getAmount()+"\n");
             }
