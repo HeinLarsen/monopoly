@@ -1,0 +1,40 @@
+@startuml
+class Game
+class Main
+class FileIO
+class TextUI
+class Player
+
+Main : - Static Game game
+Main : + Static void main()
+
+Game : - File fileIO;
+Game : - TextUI textUI;
+Game : - ArrayList<Player> players
+Game : + void gameSetup()
+Game : - void createPlayers(ArrayList<String> data)
+Game : + void displayPlayers()
+
+FileIO : + ArrayList<String> readGameData()
+FileIO : + void writeGameData()
+
+TextUI : + String getUserInput(String msg)
+TextUI : + int getUserInputs(String msg, ArrayList<String> options)
+TextUI : + ArrayList<String> getUserInput(String msg, int iterations)
+TextUI : - Scanner scan
+
+Player : - String name
+Player : - int amount
+Player : + String getName
+Player : + Player(String name, int amount)
+Player : + void setNames(String name)
+Player : + int getAmount()
+Player : + void setAmount(int amount)
+Player : + String toString()
+
+Main *-- Game : has-a
+Game *-- FileIO : has-a
+Game *-- "2...6" Player : has-a
+Game *-- TextUI : has-a
+
+@enduml

@@ -1,0 +1,4 @@
+name, amount
+Egon, 1000
+Benny, 20000
+Kjeld, 33

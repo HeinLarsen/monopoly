@@ -1,5 +1,3 @@
-
-
 public class Player {
     String name;
     int amount;
@@ -27,9 +25,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player: " +'\n'+
-                "name:'" + name + '\'' +
-                ", amount=" + amount +
-                '}';
+        return name + ": " + amount;
     }
 }
