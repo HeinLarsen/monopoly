@@ -4,6 +4,9 @@ public class Main {
 	// write your code here
         game.gameSetup();
         game.displayPlayers();
+
+
+
     }
 
 }
