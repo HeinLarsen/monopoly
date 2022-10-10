@@ -1,49 +1,17 @@
 @startuml
 class Game
-class Main
-class FileIO
-class TextUI
 class Player
-class BankAccount
-
-Main : - Static Game game
-Main : + Static void main()
+class FileIO
 
 Game : - File fileIO;
 Game : - TextUI textUI;
-Game : - ArrayList<Player> players
+Game : + ArrayList<Player> players
 Game : + void gameSetup()
-Game : - void createPlayers(ArrayList<String> data)
-Game : + void displayPlayers()
+Game : - createPlayers(ArrayList<String> data)
 
-FileIO : + ArrayList<String> readGameData()
-FileIO : + void writeGameData()
-
-TextUI : + String getUserInput(String msg)
-TextUI : + int getUserInputs(String msg, ArrayList<String> options)
-TextUI : + ArrayList<String> getUserInput(String msg, int iterations)
-TextUI : - Scanner scan
-
-Player : - String name
-Player : - BankAccount account
-Player : + Player(String name, int amount)
-Player : + String getName()
-Player : + void setNames(String name)
-Player : + int getAmount()
-Player : + void buy(int price)
-Player : + String toString()
-
-BankAccount : - int balance
-BankAccount : + BankAccount(int startAmount)
-BankAccount : + void doTransaction(int amount)
-BankAccount : + int getBalance()
-BankAccount : + String toString()
+Game *-- FileIO
+Game *-- Player
 
 
-Main *-- Game : has-a
-Game *-- FileIO : has-a
-Game *-- "2...6" Player : has-a
-Game *-- TextUI : has-a
-Player *-- BankAccount
 
 @enduml

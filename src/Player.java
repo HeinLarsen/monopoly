@@ -2,11 +2,17 @@ public class Player {
     private String name;
     private BankAccount account;
 
+
+    private int startPosition = 1;
+    private int currentPosition = startPosition;
+
+
     public Player(String name, int amount) {
         this.name = name;
         account = new BankAccount(amount);
-
     }
+
+
 
     public String getName() {
         return name;
@@ -16,19 +22,30 @@ public class Player {
         this.name = name;
     }
 
-    public int getAmount() {
+    public int getBalance() {
         return account.getBalance();
     }
 
-    public void buy(int price) {
-        this.account.doTransaction(-price);
-    }
 
     @Override
     public String toString() {
-        return name + ": " + account;
+        return name +":"+ account;
+
     }
 
+    public void buy(int cost){
+
+        this.account.doTransaction(-cost);
+    }
+    public int updatePos(int sum){
 
 
+        currentPosition = currentPosition + sum;
+
+        return currentPosition;
+    }
+
+    public int getPosition() {
+        return currentPosition;
+    }
 }
