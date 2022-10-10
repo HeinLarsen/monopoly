@@ -44,7 +44,7 @@ public class FileIO {
         String[] values = new String[40];
         String header;
         try {
-            Scanner scan = new Scanner(new File("data/boarddata.csv"));
+            Scanner scan = new Scanner(new File("Data/boarddata.csv"));
             header = scan.nextLine();
             for (int i = 0; i < values.length; i++){
                 String s = scan.nextLine();
