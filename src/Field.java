@@ -36,13 +36,15 @@ public class Field {
     }
 
     public String processChoice(String choice, Player p) {
+        String s;
         if(choice.equalsIgnoreCase("J")){
-            return onAccept(p);
+            s = onAccept(p);
 
         }else{
-            return onReject(p);
+            s = onReject(p);
 
         }
+        return s;
 
     }
     protected String onAccept(Player p){

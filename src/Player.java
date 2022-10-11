@@ -36,6 +36,10 @@ public class Player {
         this.account.doTransaction(-cost);
     }
 
+    public void pay(int amount) {
+        this.account.doTransaction(-amount);
+    }
+
     public int updatePos(int sum){
 
         currentPosition = currentPosition + sum;//52

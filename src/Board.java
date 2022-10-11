@@ -32,11 +32,13 @@ public class Board {
             Field f;
 
             switch (fieldtype) {
-                case "plot": f = new Plot(id, label, cost, income, seriesID);
-
+                case "plot":
+                    f = new Plot(id, label, cost, income, seriesID);
                 break;
-                case "lykkefelt": f = new Chance(id, label,cost, income);
-
+                case "lykkefelt":
+                    f = new Chance(id, label,cost, income);
+                    break;
+                case "tax": f = new Tax(id, label, cost, income);
                     break;
                 default: f = new Field(id, label, cost, income);
             }

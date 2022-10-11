@@ -60,7 +60,7 @@ public class Game {
 
         System.out.println("Det er "+currentPlayer.getName()+"'s tur. \n"+currentPlayer.getName()+ "står på felt "+currentPlayer.getPosition() );
 
-        int result = 1; //Dice.rollDiceSum();
+        int result = 4; //Dice.rollDiceSum();
         int newPos = currentPlayer.updatePos(result);
         //System.out.println("Current player NEW position: "+currentPlayer.getPosition());
         Field f = board.getField(newPos);
@@ -68,11 +68,12 @@ public class Game {
     }
 
     private void landAndAct(Field f){
-
+        System.out.println("balance before " + currentPlayer.getBalance());
         String optionMsg = f.onLand(currentPlayer);
         String choice = textUI.getUserInput(optionMsg);
         String msg = f.processChoice(choice, currentPlayer);
         textUI.displayMessage(msg);
+        System.out.println("balance after " + currentPlayer.getBalance());
     }
 
 
