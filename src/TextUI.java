@@ -24,7 +24,7 @@ public class TextUI {
         int i = 0;
         String input="";
         while(i < iterations ){
-            System.out.println(msg);
+            displayMessage(msg);
             input = scan.nextLine();
             if(input.equalsIgnoreCase("Q")){
                 break;
@@ -39,13 +39,21 @@ public class TextUI {
     prompts the user for one input value
     returns the input
     */
+
+    public void displayMessage(String optionMsg) {
+        System.out.println(optionMsg);
+    }
+
+
     public int getUserInput(String msg, ArrayList<String> options){
 
-        System.out.println(msg);
+        displayMessage(msg);
 
         for(int i = 0; i<options.size(); i++){
 
-            System.out.println(i+1+". "+options.get(i));
+            displayMessage(i+1+". "+options.get(i));
+
+//            System.out.println(i+1+". "+options.get(i));
         }
         int choice = scan.nextInt();
         return choice;

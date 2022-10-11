@@ -12,7 +12,7 @@ public class Field {
 
 
 
-    public  Field(int ID, String label, int cost, int income){
+    public Field(int ID, String label, int cost, int income){
         this.ID = ID;
         this.label = label;
         this.cost = cost;
@@ -35,12 +35,12 @@ public class Field {
         return this.label;
     }
 
-    public void processChoice(String choice, Player p) {
+    public String processChoice(String choice, Player p) {
         if(choice.equalsIgnoreCase("J")){
-            onAccept(p);
+            return onAccept(p);
 
         }else{
-            onReject(p);
+            return onReject(p);
 
         }
 

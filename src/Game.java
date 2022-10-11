@@ -69,11 +69,10 @@ public class Game {
 
     private void landAndAct(Field f){
 
-        String msg = f.onLand(currentPlayer);
-
-
-        String choice = textUI.getUserInput(msg);
-        f.processChoice(choice, currentPlayer);
+        String optionMsg = f.onLand(currentPlayer);
+        String choice = textUI.getUserInput(optionMsg);
+        String msg = f.processChoice(choice, currentPlayer);
+        textUI.displayMessage(msg);
     }
 
 
