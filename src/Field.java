@@ -1,9 +1,4 @@
-/* TODO: Make this class a super class by...
-    1. removing attributes that are not common to ALL field types (cost, income, seriesID, owner)
-    2. adding onLand, onReject and processResonse methods
-*
-*
-* */
+
 public class Field {
     private int ID;
     private String label;
@@ -12,7 +7,7 @@ public class Field {
 
 
 
-    public Field(int ID, String label, int cost, int income){
+    public  Field(int ID, String label, int cost, int income){
         this.ID = ID;
         this.label = label;
         this.cost = cost;
@@ -37,6 +32,7 @@ public class Field {
 
     public String processChoice(String choice, Player p) {
         String s;
+
         if(choice.equalsIgnoreCase("J")){
             s = onAccept(p);
 
@@ -47,12 +43,16 @@ public class Field {
         return s;
 
     }
-    protected String onAccept(Player p){
-        return "";
+    protected String onAccept(Player p){ return "";
     }
     protected String onReject(Player p){
         return "";
     }
 
-
+    public int getIncome() {
+        return income;
+    }
+    public int getCost(){
+        return cost;
+    }
 }

@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+/*
+* Todo: tilføj en klasse til at læse kort data  readChanceData() (jvf. Task 2.c)
+ * */
+
 public class FileIO {
 
 
@@ -51,6 +55,22 @@ public class FileIO {
                 values[i] = s;
             }
         } catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+        return values;
+    }
+
+    public String[] readChanceData() {
+        String[] values = new String[6];
+        String header;
+        try {
+            Scanner scan = new Scanner(new File("Data/chancedata.csv"));
+            header = scan.nextLine();
+            for (int i = 0; i < values.length; i++) {
+                String s = scan.nextLine();
+                values[i] = s;
+            }
+        } catch(FileNotFoundException e) {
             System.out.println(e);
         }
         return values;
